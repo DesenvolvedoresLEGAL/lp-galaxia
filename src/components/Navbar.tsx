@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,6 +9,12 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
+  };
+
+  const handleWhatsAppClick = () => {
+    const message = "Olá! Gostaria de saber mais sobre as soluções de IA da LEGAL para minha empresa.";
+    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -40,11 +47,13 @@ const Navbar = () => {
               Cases
             </button>
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={handleWhatsAppClick}
               variant="default"
               size="sm"
+              className="bg-green-500 hover:bg-green-600 text-white"
             >
-              Contato
+              <MessageCircle className="w-4 h-4 mr-2" />
+              WhatsApp
             </Button>
           </div>
 
@@ -84,12 +93,13 @@ const Navbar = () => {
                 Cases
               </button>
               <Button
-                onClick={() => scrollToSection('contact')}
+                onClick={handleWhatsAppClick}
                 variant="default"
                 size="sm"
-                className="w-fit"
+                className="w-fit bg-green-500 hover:bg-green-600 text-white"
               >
-                Contato
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
               </Button>
             </div>
           </div>

@@ -9,6 +9,7 @@ import CasesSection from "@/components/CasesSection";
 import MentalTriggersSection from "@/components/MentalTriggersSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <MentalTriggersSection />
       <ContactSection />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
