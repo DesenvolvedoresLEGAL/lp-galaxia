@@ -43,16 +43,24 @@ const ContactSection = () => {
               Contato
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Vamos criar sua solução?
+              Vamos criar sua solução de IA?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
               Em até 24h nosso time responde com uma proposta inicial personalizada. <span className="text-primary font-semibold">Sem blá-blá-blá.</span>
             </p>
+            <div className="flex justify-center">
+              <Badge variant="outline" className="text-primary border-primary/20 animate-pulse">
+                🔥 Últimas 3 vagas de Janeiro - Empresas Enterprise
+              </Badge>
+            </div>
           </div>
           
           <Card className="shadow-card border-border/50">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Formulário de Contato</CardTitle>
+              <CardTitle className="text-2xl">Garante seu Diagnóstico Gratuito</CardTitle>
+              <p className="text-muted-foreground">
+                Especialistas em IA para Eventos e Negócios 🏆
+              </p>
             </CardHeader>
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -140,8 +148,12 @@ const ContactSection = () => {
                   size="lg" 
                   className="w-full text-lg py-6 h-auto"
                 >
-                  Enviar Proposta
+                  🚀 Quero Meu Diagnóstico Gratuito
                 </Button>
+                
+                <p className="text-center text-sm text-muted-foreground mt-4">
+                  ✅ Seus dados estão 100% seguros. Nada de SPAM. A LEGAL só fala com empresas.
+                </p>
               </form>
             </CardContent>
           </Card>
