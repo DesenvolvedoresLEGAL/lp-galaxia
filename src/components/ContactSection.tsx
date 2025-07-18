@@ -50,7 +50,7 @@ const ContactSection = () => {
             </p>
             <div className="flex justify-center">
               <Badge variant="outline" className="text-primary border-primary/20 animate-pulse">
-                🔥 Últimas 3 vagas de Janeiro - Empresas Enterprise
+                🔥 Últimas 3 vagas de Julho - Empresas Pequenas, Médias e Grandes
               </Badge>
             </div>
           </div>

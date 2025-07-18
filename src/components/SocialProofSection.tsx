@@ -3,9 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const SocialProofSection = () => {
   const stats = [
-    { number: "+50", label: "Projetos de IA entregues", icon: "🚀" },
+    { number: "+25", label: "Projetos de IA entregues", icon: "🚀" },
     { number: "+R$ 10M", label: "Em resultados gerados", icon: "💰" },
-    { number: "24h", label: "Resposta garantida", icon: "⚡" },
+    { number: "1h", label: "Resposta Garantida", icon: "⚡" },
     { number: "4x", label: "Ganho médio de eficiência", icon: "📈" }
   ];
 

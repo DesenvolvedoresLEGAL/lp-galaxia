@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <Badge variant="outline" className="mb-4 text-primary border-primary/20 animate-pulse">
-            🚨 Agenda de Janeiro: Apenas 3 vagas para projetos enterprise
+            🔥 Últimas 3 vagas de Julho - Empresas Pequenas, Médias e Grandes
           </Badge>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
