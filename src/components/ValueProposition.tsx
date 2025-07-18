@@ -21,7 +21,7 @@ const ValueProposition = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-section">
+    <section id="value-proposition" className="py-20 bg-gradient-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4 text-primary border-primary/20">

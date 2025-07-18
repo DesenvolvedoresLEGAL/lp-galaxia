@@ -7,7 +7,14 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const navbarHeight = 64; // Height of the fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
     setIsMenuOpen(false);
   };
 
@@ -28,6 +35,24 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection('social-proof')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Prova Social
+            </button>
+            <button
+              onClick={() => scrollToSection('value-proposition')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Proposta de Valor
+            </button>
+            <button
+              onClick={() => scrollToSection('how-it-works')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Como Funciona
+            </button>
             <button
               onClick={() => scrollToSection('services')}
               className="text-foreground hover:text-primary transition-colors"
@@ -74,6 +99,24 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection('social-proof')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
+                Prova Social
+              </button>
+              <button
+                onClick={() => scrollToSection('value-proposition')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
+                Proposta de Valor
+              </button>
+              <button
+                onClick={() => scrollToSection('how-it-works')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
+                Como Funciona
+              </button>
               <button
                 onClick={() => scrollToSection('services')}
                 className="text-foreground hover:text-primary transition-colors text-left"

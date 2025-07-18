@@ -18,7 +18,7 @@ const SocialProofSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-section">
+    <section id="social-proof" className="py-16 bg-gradient-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-primary border-primary/20">
