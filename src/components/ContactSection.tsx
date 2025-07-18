@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,53 @@ const ContactSection = () => {
   
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulated form submission
+    
+    console.log('Form submitted:', formData);
+
+    const CONTACT_EMAIL = 'sos@operadora.legal';
+    const EMAILJS_SERVICE_ID = 'service_wi3kvx7';
+    const EMAILJS_TEMPLATE_ID = 'template_5l2767r';
+    const EMAILJS_USER_ID = 'oLw9xvmdczE218mGh';
+
+    const name = formData.name;
+    const email = formData.email;
+    const company = formData.company;
+    const phone = formData.phone;
+    const message = formData.challenge;
+
+    const templateParams = {
+      to_email: CONTACT_EMAIL,
+      from_name: name,
+      from_email: email,
+      company: company,
+      phone: phone,
+      message: message,
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Recebemos sua mensagem e entraremos em contato em breve.",
+      });
+
+      setFormData({ name: '', company: '', email: '', phone: '', challenge: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Mensagem não enviada!",
+        description: "Erro ao enviar o email, confira os dados e tente novamente.",
+      })
+    }
+
     toast({
       title: "Mensagem enviada!",
       description: "Em até 24h nosso time responde com uma proposta inicial personalizada.",
