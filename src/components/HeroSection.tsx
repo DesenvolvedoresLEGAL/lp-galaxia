@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-ai-background.jpg";
+import emailjs from '@emailjs/browser';
 
 const HeroSection = () => {
   const [email, setEmail] = useState('');
@@ -14,14 +15,46 @@ const HeroSection = () => {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleQuickCapture = (e: React.FormEvent) => {
+  const handleQuickCapture = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
+    const CONTACT_EMAIL = 'sos@operadora.legal';
+    const EMAILJS_SERVICE_ID = 'service_wi3kvx7';
+    const EMAILJS_TEMPLATE_ID = 'template_5l2767r';
+    const EMAILJS_USER_ID = 'oLw9xvmdczE218mGh';
+
+    const templateParams = {
+      to_email: CONTACT_EMAIL,
+      from_email: email,
+      message: `Encaminho meu e-mail para contato! Aguardando humanóides em ${email}.`
+      };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
+      );
+
+toast({
         title: "Email capturado!",
         description: "Em breve você receberá nossa consultoria gratuita sobre IA.",
       });
+
       setEmail('');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Mensagem não enviada!",
+        description: "Erro ao enviar o email, confira os dados e tente novamente.",
+      })
+    }
+
+    toast({
+      title: "Mensagem enviada!",
+      description: "Em até 24h nosso time responde com uma proposta inicial personalizada.",
+    });
     }
   };
 
