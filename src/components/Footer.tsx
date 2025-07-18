@@ -1,8 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-background py-16">
+  return <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -37,22 +35,18 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <ul className="space-y-2 text-background/80">
-              <li>📧 contato@legal.com</li>
-              <li>📱 (11) 99999-9999</li>
+              <li>📧 sos@operadora.legal</li>
+              <li>📱 (11) 99957-2394</li>
               <li>🏢 100% B2B</li>
-              <li>⚡ Resposta em 24h</li>
+              <li>⚡ Resposta em 30min</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-background/20 mt-12 pt-8 text-center">
-          <p className="text-background/60">
-            © 2024 LEGAL - Todos os direitos reservados. Transformando empresas com IA desde 2020.
-          </p>
+          <p className="text-background/60">© 2025 LEGAL - Todos os direitos reservados. Transformando empresas com IA desde 2024.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
