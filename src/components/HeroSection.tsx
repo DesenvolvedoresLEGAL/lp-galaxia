@@ -79,25 +79,25 @@ toast({
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Projetos de Inteligência Artificial e Automação criados do zero para as demandas do seu negócio. 
-            <span className="text-primary font-semibold"> Mais performance, menos burocracia.</span>
+            <span className="text-primary font-semibold"> Mais performance e eficiência.</span>
           </p>
           
-          {/* Mini Email Capture */}
+          {/* Diagnóstico Gratuito */}
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 mb-8 max-w-lg mx-auto">
             <h3 className="font-semibold text-foreground mb-4">🚀 Diagnóstico Gratuito de IA</h3>
-            <form onSubmit={handleQuickCapture} className="flex gap-3">
-              <Input
-                type="email"
-                placeholder="Seu melhor e-mail para o diagnóstico"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1"
-                required
-              />
-              <Button type="submit" variant="cta" className="whitespace-nowrap">
+            <p className="text-sm text-muted-foreground mb-4">
+              Descubra em menos de 5 minutos oportunidades reais para aplicar IA no seu negócio.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScqgHd7hLjqZ7WiqJmpiuW5CLJmbpdO8vuffahp8Bd5_PV_yA/viewform?usp=sharing&ouid=100646885101843381079"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full"
+            >
+              <Button variant="cta" className="w-full">
                 Quero meu Diagnóstico Gratuito
               </Button>
-            </form>
+            </a>
             <p className="text-xs text-muted-foreground mt-2">
               ✅ Diagnóstico em menos de 5 minutos. Sem custo, sem compromisso. Só para empresas.
             </p>
