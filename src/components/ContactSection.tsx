@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +6,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import { 
+  sanitizeString, 
+  sanitizePhone, 
+  contactFormSchema, 
+  checkRateLimit, 
+  generateCSRFToken, 
+  validateCSRFToken, 
+  getEmailConfig 
+} from "@/lib/security";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -16,66 +25,137 @@ const ContactSection = () => {
     challenge: ''
   });
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [csrfToken, setCSRFToken] = useState<string>('');
   const { toast } = useToast();
+  
+  // Generate CSRF token on component mount
+  useEffect(() => {
+    setCSRFToken(generateCSRFToken());
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log('Form submitted:', formData);
-
-    const CONTACT_EMAIL = 'sos@operadora.legal';
-    const EMAILJS_SERVICE_ID = 'service_wi3kvx7';
-    const EMAILJS_TEMPLATE_ID = 'template_5l2767r';
-    const EMAILJS_USER_ID = 'oLw9xvmdczE218mGh';
-
-    const name = formData.name;
-    const email = formData.email;
-    const company = formData.company;
-    const phone = formData.phone;
-    const message = formData.challenge;
-
-    const templateParams = {
-      to_email: CONTACT_EMAIL,
-      from_name: name,
-      from_email: email,
-      company: company,
-      phone: phone,
-      message: message,
-    };
-
+    if (isSubmitting) return;
+    
     try {
+      setIsSubmitting(true);
+      
+      // CSRF token validation
+      if (!validateCSRFToken(csrfToken)) {
+        toast({
+          title: "Erro de segurança",
+          description: "Token de segurança inválido. Recarregue a página e tente novamente.",
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      // Rate limiting check
+      const userIP = 'user_' + Date.now(); // In production, use actual IP
+      if (!checkRateLimit(userIP, 3, 900000)) {
+        toast({
+          title: "Muitas tentativas",
+          description: "Aguarde 15 minutos antes de enviar outra mensagem.",
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      // Sanitize inputs
+      const sanitizedData = {
+        name: sanitizeString(formData.name),
+        company: sanitizeString(formData.company),
+        email: formData.email.trim().toLowerCase(),
+        phone: sanitizePhone(formData.phone),
+        challenge: sanitizeString(formData.challenge)
+      };
+      
+      // Validate form data
+      const validation = contactFormSchema.safeParse(sanitizedData);
+      if (!validation.success) {
+        const errors = validation.error.errors.map(err => err.message).join(', ');
+        toast({
+          title: "Dados inválidos",
+          description: errors,
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      const config = getEmailConfig();
+      
+      const templateParams = {
+        to_email: config.contactEmail,
+        from_name: sanitizedData.name,
+        from_email: sanitizedData.email,
+        company: sanitizedData.company,
+        phone: sanitizedData.phone,
+        message: sanitizedData.challenge,
+        csrf_token: csrfToken,
+        timestamp: new Date().toISOString()
+      };
+
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        config.serviceId,
+        config.templateId,
         templateParams,
-        EMAILJS_USER_ID
+        config.userId
       );
 
       toast({
         title: "Mensagem enviada!",
-        description: "Recebemos sua mensagem e entraremos em contato em breve.",
+        description: "Em até 24h nosso time responde com uma proposta inicial personalizada.",
       });
 
+      // Reset form and generate new CSRF token
       setFormData({ name: '', company: '', email: '', phone: '', challenge: '' });
+      setCSRFToken(generateCSRFToken());
+      
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
-        title: "Mensagem não enviada!",
-        description: "Erro ao enviar o email, confira os dados e tente novamente.",
-      })
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente em alguns minutos. Se o problema persistir, entre em contato por WhatsApp.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    toast({
-      title: "Mensagem enviada!",
-      description: "Em até 24h nosso time responde com uma proposta inicial personalizada.",
-    });
-    setFormData({ name: '', company: '', email: '', phone: '', challenge: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Apply real-time sanitization based on field type
+    let sanitizedValue = value;
+    
+    if (name === 'name' || name === 'company') {
+      // Allow only letters, spaces, and common business characters
+      sanitizedValue = value.replace(/[^a-zA-ZÀ-ÿ\s\.\-&]/g, '');
+    } else if (name === 'phone') {
+      // Allow only numbers, spaces, parentheses, hyphens, and plus sign
+      sanitizedValue = value.replace(/[^\d\s\-\(\)\+]/g, '');
+    } else if (name === 'email') {
+      // Basic email character filtering
+      sanitizedValue = value.replace(/[<>]/g, '');
+    }
+    
+    // Limit length
+    const maxLengths = {
+      name: 100,
+      company: 100,
+      email: 100,
+      phone: 20,
+      challenge: 2000
+    };
+    
+    sanitizedValue = sanitizedValue.substring(0, maxLengths[name as keyof typeof maxLengths] || 100);
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: sanitizedValue
     });
   };
 
@@ -187,13 +267,16 @@ const ContactSection = () => {
                   />
                 </div>
                 
+                <input type="hidden" name="csrf_token" value={csrfToken} />
+                
                 <Button 
                   type="submit" 
                   variant="cta" 
                   size="lg" 
                   className="w-full text-lg py-6 h-auto"
+                  disabled={isSubmitting}
                 >
-                  🚀 Quero Meu Diagnóstico Gratuito
+                  {isSubmitting ? "Enviando..." : "🚀 Quero Meu Diagnóstico Gratuito"}
                 </Button>
                 
                 <p className="text-center text-sm text-muted-foreground mt-4">
