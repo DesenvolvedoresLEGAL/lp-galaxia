@@ -84,22 +84,22 @@ toast({
           
           {/* Mini Email Capture */}
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 mb-8 max-w-lg mx-auto">
-            <h3 className="font-semibold text-foreground mb-4">💡 Descubra como aplicar IA no seu negócio</h3>
+            <h3 className="font-semibold text-foreground mb-4">🚀 Diagnóstico Gratuito de IA</h3>
             <form onSubmit={handleQuickCapture} className="flex gap-3">
               <Input
                 type="email"
-                placeholder="Seu melhor e-mail"
+                placeholder="Seu melhor e-mail para o diagnóstico"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1"
                 required
               />
               <Button type="submit" variant="cta" className="whitespace-nowrap">
-                Quero Consultoria Gratuita
+                Quero meu Diagnóstico Gratuito
               </Button>
             </form>
             <p className="text-xs text-muted-foreground mt-2">
-              ✅ Seus dados estão 100% seguros. Nada de SPAM. A LEGAL só fala com empresas.
+              ✅ Diagnóstico em menos de 5 minutos. Sem custo, sem compromisso. Só para empresas.
             </p>
           </div>
           
