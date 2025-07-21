@@ -7,6 +7,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import DifferentialsSection from "@/components/DifferentialsSection";
 import CasesSection from "@/components/CasesSection";
 import MentalTriggersSection from "@/components/MentalTriggersSection";
+import DiagnosticoGratuito from "@/components/DiagnosticoGratuito";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -23,6 +24,7 @@ const Index = () => {
       <DifferentialsSection />
       <CasesSection />
       <MentalTriggersSection />
+      <DiagnosticoGratuito />
       <ContactSection />
       <Footer />
       <WhatsAppFloat />
