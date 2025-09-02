@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import ValueProposition from "@/components/ValueProposition";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 // Lazy load components below the fold for better performance
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
@@ -14,6 +13,7 @@ const MentalTriggersSection = lazy(() => import("@/components/MentalTriggersSect
 const DiagnosticoGratuito = lazy(() => import("@/components/DiagnosticoGratuito"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
+const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
 
 const Index = () => {
   return (
@@ -31,8 +31,8 @@ const Index = () => {
         <DiagnosticoGratuito />
         <ContactSection />
         <Footer />
+        <WhatsAppFloat />
       </Suspense>
-      <WhatsAppFloat />
     </div>
   );
 };
