@@ -5,7 +5,8 @@ const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     const message = "Olá! Gostaria de saber mais sobre as soluções de IA da LEGAL para minha empresa.";
     const whatsappUrl = `https://wa.me/5511999572394?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    console.log('WhatsApp URL:', whatsappUrl); // Debug
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
