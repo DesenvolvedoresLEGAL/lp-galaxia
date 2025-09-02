@@ -20,14 +20,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Resource Hints for Performance -->
+    <!-- Critical CSS loading -->
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    
+    <!-- DNS prefetch for faster connection establishment -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.emailjs.com" />
+    <link rel="dns-prefetch" href="https://api.emailjs.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Preconnect for critical origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://cdn.emailjs.com" />
     <link rel="preconnect" href="https://api.emailjs.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Module preload for main entry point -->
     <link rel="modulepreload" href="/src/main.tsx" />
+    
+    <!-- Preload critical above-the-fold image -->
+    <link rel="preload" href="/src/assets/hero-ai-background.jpg" as="image" />
     
     <!-- Security Headers -->
     <meta http-equiv="X-Frame-Options" content="DENY" />
