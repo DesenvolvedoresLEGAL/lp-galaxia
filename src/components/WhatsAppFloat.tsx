@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     const message = "Olá! Gostaria de saber mais sobre as soluções de IA da LEGAL para minha empresa.";
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5511999572394?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
