@@ -11,8 +11,12 @@ const HeroSection = () => {
   const { toast } = useToast();
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    requestAnimationFrame(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   };
 
   const handleQuickCapture = async (e: React.FormEvent) => {
