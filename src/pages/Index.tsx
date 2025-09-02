@@ -1,16 +1,19 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import ValueProposition from "@/components/ValueProposition";
-import ServicesSection from "@/components/ServicesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import DifferentialsSection from "@/components/DifferentialsSection";
-import CasesSection from "@/components/CasesSection";
-import MentalTriggersSection from "@/components/MentalTriggersSection";
-import DiagnosticoGratuito from "@/components/DiagnosticoGratuito";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+
+// Lazy load components below the fold for better performance
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const HowItWorksSection = lazy(() => import("@/components/HowItWorksSection"));
+const DifferentialsSection = lazy(() => import("@/components/DifferentialsSection"));
+const CasesSection = lazy(() => import("@/components/CasesSection"));
+const MentalTriggersSection = lazy(() => import("@/components/MentalTriggersSection"));
+const DiagnosticoGratuito = lazy(() => import("@/components/DiagnosticoGratuito"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -19,14 +22,16 @@ const Index = () => {
       <HeroSection />
       <SocialProofSection />
       <ValueProposition />
-      <ServicesSection />
-      <HowItWorksSection />
-      <DifferentialsSection />
-      <CasesSection />
-      <MentalTriggersSection />
-      <DiagnosticoGratuito />
-      <ContactSection />
-      <Footer />
+      <Suspense fallback={<div className="min-h-[200px]" />}>
+        <ServicesSection />
+        <HowItWorksSection />
+        <DifferentialsSection />
+        <CasesSection />
+        <MentalTriggersSection />
+        <DiagnosticoGratuito />
+        <ContactSection />
+        <Footer />
+      </Suspense>
       <WhatsAppFloat />
     </div>
   );
