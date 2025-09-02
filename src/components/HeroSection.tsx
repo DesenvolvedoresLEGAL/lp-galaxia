@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/hero-ai-background.jpg";
+import heroImage from "@/assets/hero-ai-background.webp";
 import emailjs from '@emailjs/browser';
 
 const HeroSection = () => {
