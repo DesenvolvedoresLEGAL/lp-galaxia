@@ -160,14 +160,21 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-section">
+    <section 
+      id="contact" 
+      className="py-20 bg-gradient-section"
+      aria-labelledby="contact-heading"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 text-primary border-primary/20">
               Contato
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 
+              id="contact-heading"
+              className="text-3xl md:text-4xl font-bold text-foreground mb-6"
+            >
               Vamos criar sua solução de IA?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
@@ -175,7 +182,7 @@ const ContactSection = () => {
             </p>
             <div className="flex justify-center">
               <Badge variant="outline" className="text-primary border-primary/20 animate-pulse">
-                🔥 Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
+                <span aria-hidden="true">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
               </Badge>
             </div>
           </div>
@@ -188,11 +195,11 @@ const ContactSection = () => {
               </p>
             </CardHeader>
             <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Nome *
+                      Nome <span aria-label="campo obrigatório">*</span>
                     </label>
                     <Input
                       id="name"
@@ -200,13 +207,14 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       placeholder="Seu nome completo"
-                      className="border-border/50 focus:border-primary"
+                      className="border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      Empresa *
+                      Empresa <span aria-label="campo obrigatório">*</span>
                     </label>
                     <Input
                       id="company"
@@ -214,8 +222,9 @@ const ContactSection = () => {
                       value={formData.company}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       placeholder="Nome da sua empresa"
-                      className="border-border/50 focus:border-primary"
+                      className="border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
                 </div>
@@ -223,7 +232,7 @@ const ContactSection = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email *
+                      Email <span aria-label="campo obrigatório">*</span>
                     </label>
                     <Input
                       id="email"
@@ -232,29 +241,32 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       placeholder="seu@email.com"
-                      className="border-border/50 focus:border-primary"
+                      className="border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Celular *
+                      Celular <span aria-label="campo obrigatório">*</span>
                     </label>
                     <Input
                       id="phone"
                       name="phone"
+                      type="tel"
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       placeholder="(11) 99999-9999"
-                      className="border-border/50 focus:border-primary"
+                      className="border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
                 </div>
                 
                 <div>
                   <label htmlFor="challenge" className="block text-sm font-medium text-foreground mb-2">
-                    Descreva sua dor/desafio *
+                    Descreva sua dor/desafio <span aria-label="campo obrigatório">*</span>
                   </label>
                   <Textarea
                     id="challenge"
@@ -262,8 +274,9 @@ const ContactSection = () => {
                     value={formData.challenge}
                     onChange={handleChange}
                     required
+                    aria-required="true"
                     placeholder="Conte-nos sobre o desafio que sua empresa enfrenta e como podemos ajudar com IA..."
-                    className="border-border/50 focus:border-primary min-h-[120px]"
+                    className="border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 min-h-[120px]"
                   />
                 </div>
                 
@@ -273,14 +286,24 @@ const ContactSection = () => {
                   type="submit" 
                   variant="cta" 
                   size="lg" 
-                  className="w-full text-lg py-6 h-auto"
+                  className="w-full text-lg py-6 h-auto focus:ring-2 focus:ring-accent/20 focus:outline-none"
                   disabled={isSubmitting}
+                  aria-describedby={isSubmitting ? "submitting-status" : undefined}
                 >
-                  {isSubmitting ? "Enviando..." : "🚀 Quero Meu Diagnóstico Gratuito"}
+                  {isSubmitting ? (
+                    <>
+                      <span id="submitting-status">Enviando...</span>
+                      <span className="sr-only">Formulário sendo enviado, aguarde</span>
+                    </>
+                  ) : (
+                    <>
+                      <span aria-hidden="true">🚀</span> Quero Meu Diagnóstico Gratuito
+                    </>
+                  )}
                 </Button>
                 
                 <p className="text-center text-sm text-muted-foreground mt-4">
-                  ✅ Seus dados estão 100% seguros. Nada de SPAM. A LEGAL só fala com empresas.
+                  <span aria-hidden="true">✅</span> Seus dados estão 100% seguros. Nada de SPAM. A LEGAL só fala com empresas.
                 </p>
               </form>
             </CardContent>

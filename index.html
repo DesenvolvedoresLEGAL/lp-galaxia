@@ -21,6 +21,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Accessibility Meta Tags -->
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="color-scheme" content="light dark" />
+    
     <!-- Resource Hints for Performance -->
     <!-- DNS prefetch for faster connection establishment -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -54,18 +58,58 @@
     <title>A LEGAL - Inteligência Artificial para Negócios</title>
     <meta name="description" content="Desbloqueie o potencial da sua empresa com soluções de Inteligência Artificial e Automação criadas do zero. Projetos B2B com entrega rápida e resultados reais." />
     <meta name="author" content="LEGAL" />
+    <meta name="keywords" content="inteligência artificial, automação, IA para empresas, consultoria IA, desenvolvimento IA, soluções empresariais" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://legal-ai-solutions.lovable.app/" />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="LEGAL - Soluções de IA Sob Medida para Empresas" />
     <meta property="og:description" content="Desbloqueie o potencial da sua empresa com soluções de Inteligência Artificial e Automação criadas do zero. Projetos B2B com entrega rápida e resultados reais." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://legal-ai-solutions.lovable.app/" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:site_name" content="LEGAL - IA para Negócios" />
+    <meta property="og:locale" content="pt_BR" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:title" content="LEGAL - Soluções de IA Sob Medida para Empresas" />
+    <meta name="twitter:description" content="Desbloqueie o potencial da sua empresa com soluções de Inteligência Artificial e Automação criadas do zero." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LEGAL",
+      "description": "Soluções de Inteligência Artificial e Automação para empresas",
+      "url": "https://legal-ai-solutions.lovable.app/",
+      "logo": "https://legal-ai-solutions.lovable.app/favicon.ico",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-99957-2394",
+        "contactType": "sales",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://wa.me/5511999572394"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "description": "Diagnóstico Gratuito de IA",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
   </head>
 
   <body>
+    <!-- Screen reader announcement for dynamic content -->
+    <div aria-live="polite" aria-atomic="true" class="sr-only" id="announcements"></div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -63,23 +63,40 @@ toast({
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden pt-16">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+    <main>
+      {/* Skip Link for keyboard navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50"
+      >
+        Pular para conteúdo principal
+      </a>
       
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <Badge variant="outline" className="mb-4 text-primary border-primary/20 animate-pulse">
-            🔥 Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
-          </Badge>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Cansado de promessa de IA no PPT? <span className="bg-gradient-primary bg-clip-text text-transparent">Aqui é execução de verdade!</span>
-          </h1>
+      <section 
+        className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden pt-16"
+        aria-labelledby="hero-heading"
+      >
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{ backgroundImage: `url(${heroImage})` }}
+          role="img"
+          aria-label="Fundo com elementos de inteligência artificial"
+        />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center" id="main-content">
+          <div className="max-w-4xl mx-auto">
+            <Badge variant="outline" className="mb-4 text-primary border-primary/20 animate-pulse">
+              <span aria-hidden="true">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
+            </Badge>
+            
+            <h1 
+              id="hero-heading"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
+            >
+              Cansado de promessa de IA no PPT? <span className="bg-gradient-primary bg-clip-text text-transparent">Aqui é execução de verdade!</span>
+            </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Projetos de Inteligência Artificial e Automação criados do zero para as demandas do seu negócio. 
@@ -88,7 +105,9 @@ toast({
           
           {/* Diagnóstico Gratuito */}
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 mb-8 max-w-lg mx-auto">
-            <h3 className="font-semibold text-foreground mb-4">🚀 Diagnóstico Gratuito de IA</h3>
+            <h2 className="font-semibold text-foreground mb-4">
+              <span aria-hidden="true">🚀</span> Diagnóstico Gratuito de IA
+            </h2>
             <p className="text-sm text-muted-foreground mb-4">
               Descubra em menos de 5 minutos oportunidades reais para aplicar IA no seu negócio.
             </p>
@@ -97,13 +116,14 @@ toast({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block w-full"
+              aria-label="Acessar formulário de diagnóstico gratuito de IA (abre em nova aba)"
             >
-              <Button variant="cta" className="w-full">
+              <Button variant="cta" className="w-full focus:ring-2 focus:ring-accent/20 focus:outline-none">
                 Quero meu Diagnóstico Gratuito
               </Button>
             </a>
             <p className="text-xs text-muted-foreground mt-2">
-              ✅ Diagnóstico em menos de 5 minutos. Sem custo, sem compromisso. Só para empresas.
+              <span aria-hidden="true">✅</span> Diagnóstico em menos de 5 minutos. Sem custo, sem compromisso. Só para empresas.
             </p>
           </div>
           
@@ -112,36 +132,40 @@ toast({
               variant="hero" 
               size="lg"
               onClick={scrollToContact}
-              className="text-base px-6 py-4 h-auto"
+              className="text-base px-6 py-4 h-auto focus:ring-2 focus:ring-primary/20 focus:outline-none"
+              aria-label="Sou Empresa de Eventos - ir para seção de contato"
             >
-              📅 Sou Empresa de Eventos
+              <span aria-hidden="true">📅</span> Sou Empresa de Eventos
             </Button>
             
             <Button 
               variant="outline" 
               size="lg"
               onClick={scrollToContact}
-              className="text-base px-6 py-4 h-auto border-primary/50 hover:bg-primary/10"
+              className="text-base px-6 py-4 h-auto border-primary/50 hover:bg-primary/10 focus:ring-2 focus:ring-primary/20 focus:outline-none"
+              aria-label="Sou Indústria - ir para seção de contato"
             >
-              🏭 Sou Indústria
+              <span aria-hidden="true">🏭</span> Sou Indústria
             </Button>
             
             <Button 
               variant="secondary" 
               size="lg"
               onClick={scrollToContact}
-              className="text-base px-6 py-4 h-auto"
+              className="text-base px-6 py-4 h-auto focus:ring-2 focus:ring-secondary/20 focus:outline-none"
+              aria-label="Sou Tech/Outros - ir para seção de contato"
             >
-              💻 Sou Tech/Outros
+              <span aria-hidden="true">💻</span> Sou Tech/Outros
             </Button>
           </div>
         </div>
       </div>
       
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/20 rounded-full blur-xl"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl" aria-hidden="true"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/20 rounded-full blur-xl" aria-hidden="true"></div>
     </section>
+    </main>
   );
 };
 
