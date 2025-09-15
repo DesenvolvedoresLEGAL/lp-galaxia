@@ -85,14 +85,14 @@ const FinalCTASection = () => {
             </div>
             <h3 className="text-xl font-bold font-inter mb-4">Diagnóstico</h3>
             <p className="text-sm opacity-80 font-inter mb-6">
-              Análise gratuita e personalizada em menos de 5 minutos
+              Análise gratuita e personalizada em menos de 5 minutos da sua companhia
             </p>
             <Button 
               onClick={handleDiagnosisClick}
               variant="outline"
               className="w-full bg-transparent border-white text-white hover:bg-white hover:text-foreground font-bold py-3 font-inter"
             >
-              Quero meu Diagnóstico Gratuito
+              Quero meu Diagnóstico
             </Button>
           </div>
         </div>
@@ -108,11 +108,6 @@ const FinalCTASection = () => {
           </p>
         </div>
 
-        {/* Contact info */}
-        <div className="mt-12 text-sm opacity-75 font-inter">
-          <p>📞 +55 (11) 99957-2394 | 📧 contato@legal.ai</p>
-          <p className="mt-2">Atendimento especializado para empresas • Segunda a Sexta, 9h às 18h</p>
-        </div>
       </div>
     </section>
   );
