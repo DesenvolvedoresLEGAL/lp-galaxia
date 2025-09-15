@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- Google tag (gtag.js) - Deferred for performance -->
+    <!-- Google Analytics - Ultra-deferred loading only on user interaction -->
 <script>
-  // Defer Google Analytics loading until after page load
-  window.addEventListener('load', function() {
-    setTimeout(function() {
+  (function() {
+    var analyticsLoaded = false;
+    
+    function loadAnalytics() {
+      if (analyticsLoaded) return;
+      analyticsLoaded = true;
+      
       var script = document.createElement('script');
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YBVW730WF';
@@ -13,10 +17,36 @@
       
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-6YBVW730WF');
-    }, 1000); // 1 second delay after page load
-  });
+    }
+    
+    // Load analytics only on first user interaction
+    var events = ['mousedown', 'touchstart', 'keydown', 'scroll'];
+    var loaded = false;
+    
+    function triggerAnalytics() {
+      if (!loaded) {
+        loaded = true;
+        events.forEach(function(event) {
+          document.removeEventListener(event, triggerAnalytics, true);
+        });
+        loadAnalytics();
+      }
+    }
+    
+    events.forEach(function(event) {
+      document.addEventListener(event, triggerAnalytics, true);
+    });
+    
+    // Fallback: load after 10 seconds if no interaction
+    setTimeout(function() {
+      if (!loaded) {
+        loadAnalytics();
+      }
+    }, 10000);
+  })();
 </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
