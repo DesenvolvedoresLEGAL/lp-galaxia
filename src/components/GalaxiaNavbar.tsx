@@ -8,7 +8,7 @@ const GalaxiaNavbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 80; // Height of fixed navbar
+      const navHeight = 64; // Height of fixed navbar
       const targetPosition = element.offsetTop - navHeight;
       
       window.scrollTo({
@@ -38,7 +38,7 @@ const GalaxiaNavbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button

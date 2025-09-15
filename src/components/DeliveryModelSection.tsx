@@ -52,17 +52,17 @@ const DeliveryModelSection = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Connection line for desktop */}
-          <div className="hidden lg:block absolute top-20 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+          <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
             <div className="flex justify-between items-center">
-              <div className="w-8 h-8 bg-galaxia-blue rounded-full"></div>
+              <div className="w-6 h-6 bg-galaxia-blue rounded-full"></div>
               <div className="flex-1 h-1 bg-gradient-to-r from-galaxia-blue via-galaxia-purple to-galaxia-cyan mx-4"></div>
-              <div className="w-8 h-8 bg-galaxia-purple rounded-full"></div>
+              <div className="w-6 h-6 bg-galaxia-purple rounded-full"></div>
               <div className="flex-1 h-1 bg-gradient-to-r from-galaxia-purple to-galaxia-cyan mx-4"></div>
-              <div className="w-8 h-8 bg-galaxia-cyan rounded-full"></div>
+              <div className="w-6 h-6 bg-galaxia-cyan rounded-full"></div>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-4 relative z-10">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 relative z-10 pt-8">
             {phases.map((phase, index) => {
               const Icon = phase.icon;
               return (

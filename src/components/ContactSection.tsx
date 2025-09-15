@@ -175,7 +175,7 @@ const ContactSection = () => {
               id="contact-heading"
               className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Vamos criar sua solução de IA?
+              Entre em contato conosco
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
               Em até 24h nosso time responde com uma proposta inicial personalizada. <span className="text-primary font-semibold">Sem blá-blá-blá.</span>
@@ -189,9 +189,9 @@ const ContactSection = () => {
           
           <Card className="shadow-card border-border/50">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Garante seu Diagnóstico Gratuito</CardTitle>
+              <CardTitle className="text-2xl">Solicite sua proposta personalizada</CardTitle>
               <p className="text-muted-foreground">
-                Especialistas em IA para Eventos e Negócios 🏆
+                Especialistas em IA Corporativa 🏆
               </p>
             </CardHeader>
             <CardContent className="p-8">

@@ -74,26 +74,6 @@ const GalaxiaHeroSection = () => {
           </Button>
         </div>
 
-        {/* Visual Element */}
-        <div className="relative mx-auto max-w-4xl">
-          <div className="bg-gradient-galaxia p-1 rounded-2xl shadow-galaxia">
-            <div className="bg-background rounded-xl p-8 md:p-12">
-              <div className="flex items-center justify-center space-x-8 opacity-60">
-                {/* Simulated network visualization */}
-                <div className="w-4 h-4 bg-galaxia-blue rounded-full animate-pulse"></div>
-                <div className="w-2 h-px bg-galaxia-blue"></div>
-                <div className="w-6 h-6 bg-galaxia-purple rounded-full animate-pulse delay-300"></div>
-                <div className="w-2 h-px bg-galaxia-purple"></div>
-                <div className="w-4 h-4 bg-galaxia-cyan rounded-full animate-pulse delay-500"></div>
-                <div className="w-2 h-px bg-galaxia-cyan"></div>
-                <div className="w-5 h-5 bg-galaxia-blue rounded-full animate-pulse delay-700"></div>
-              </div>
-              <p className="text-sm text-muted-foreground mt-4 font-inter">
-                Rede neural conectando sua empresa ao futuro
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
