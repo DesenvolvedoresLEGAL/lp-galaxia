@@ -89,7 +89,7 @@ export default {
 				'galaxia': 'var(--shadow-galaxia)',
 			},
 			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
+				'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
