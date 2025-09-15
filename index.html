@@ -41,6 +41,12 @@
     <!-- Module preload for main entry point -->
     <link rel="modulepreload" href="/src/main.tsx" />
     
+    <!-- Preload critical lazy-loaded components to break dependency chains -->
+    <link rel="modulepreload" href="/src/components/DeliveryModelSection.tsx" />
+    <link rel="modulepreload" href="/src/components/DiagnosisSection.tsx" />
+    <link rel="modulepreload" href="/src/components/TechnologySection.tsx" />
+    <link rel="modulepreload" href="/src/components/FAQSection.tsx" />
+    
     <!-- Preload critical above-the-fold image -->
     <link rel="preload" href="/src/assets/hero-ai-background.webp" as="image" />
     
