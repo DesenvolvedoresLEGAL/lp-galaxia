@@ -69,7 +69,10 @@ const GalaxiaHeroSection = () => {
               size="lg"
               variant="outline"
               onClick={handleWhatsAppClick}
-              className="bg-galaxia-green hover:bg-galaxia-green/90 text-white border-galaxia-green font-bold px-8 py-4 text-lg transition-all duration-300 font-inter"
+              className="text-white border font-bold px-8 py-4 text-lg transition-all duration-300 font-inter"
+              style={{ backgroundColor: '#4D2BFB', borderColor: '#4D2BFB' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3D1BEB'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4D2BFB'}
             >
               Fale agora no WhatsApp
             </Button>
