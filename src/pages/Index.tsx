@@ -12,7 +12,6 @@ const SuccessCasesSection = lazy(() => import("@/components/SuccessCasesSection"
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const GlossarySection = lazy(() => import("@/components/GlossarySection"));
 const FinalCTASection = lazy(() => import("@/components/FinalCTASection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
 
@@ -32,7 +31,6 @@ const Index = () => {
           <FAQSection />
           <GlossarySection />
           <FinalCTASection />
-          <ContactSection />
           <Footer />
           <WhatsAppFloat />
         </Suspense>
