@@ -55,23 +55,32 @@ const GalaxiaHeroSection = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button 
-            size="lg"
-            onClick={scrollToContact}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 text-lg shadow-button transition-all duration-300 hover:shadow-galaxia font-inter"
-          >
-            Agende uma demonstração gratuita
-          </Button>
+        <div className="flex flex-col items-center gap-6 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg"
+              onClick={scrollToContact}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 text-lg shadow-button transition-all duration-300 hover:shadow-galaxia font-inter"
+            >
+              Agende uma demonstração gratuita
+            </Button>
+            
+            <Button 
+              size="lg"
+              variant="outline"
+              onClick={handleWhatsAppClick}
+              className="bg-galaxia-green hover:bg-galaxia-green/90 text-white border-galaxia-green font-bold px-8 py-4 text-lg transition-all duration-300 font-inter"
+            >
+              Fale agora no WhatsApp
+            </Button>
+          </div>
           
-          <Button 
-            size="lg"
-            variant="outline"
-            onClick={handleWhatsAppClick}
-            className="bg-galaxia-green hover:bg-galaxia-green/90 text-white border-galaxia-green font-bold px-8 py-4 text-lg transition-all duration-300 font-inter"
-          >
-            Fale agora no WhatsApp
-          </Button>
+          {/* Badge */}
+          <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full">
+            <span className="text-red-600 font-semibold text-sm">
+              🔥 Últimas 3 vagas de Setembro
+            </span>
+          </div>
         </div>
 
       </div>
