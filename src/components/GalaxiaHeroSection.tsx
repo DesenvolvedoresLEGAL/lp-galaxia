@@ -76,8 +76,8 @@ const GalaxiaHeroSection = () => {
           </div>
           
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full">
-            <span className="text-red-600 font-semibold text-sm">
+          <div className="inline-flex items-center px-4 py-2 rounded-full" style={{ backgroundColor: '#4D2BFB1A', border: '1px solid #4D2BFB33' }}>
+            <span className="font-semibold text-sm" style={{ color: '#4D2BFB' }}>
               🔥 Últimas 3 vagas de Setembro
             </span>
           </div>
