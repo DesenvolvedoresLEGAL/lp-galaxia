@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// GalaxIA™ specific colors
+				galaxia: {
+					blue: 'hsl(var(--galaxia-blue))',
+					purple: 'hsl(var(--galaxia-purple))',
+					cyan: 'hsl(var(--galaxia-cyan))',
+					green: 'hsl(var(--galaxia-green))',
+					light: 'hsl(var(--galaxia-light))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -72,11 +80,16 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-section': 'var(--gradient-section)',
+				'gradient-galaxia': 'var(--gradient-galaxia)',
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',
 				'button': 'var(--shadow-button)',
+				'galaxia': 'var(--shadow-galaxia)',
+			},
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',

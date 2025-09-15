@@ -1,0 +1,109 @@
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Sparkles } from "lucide-react";
+
+const GalaxiaHeroSection = () => {
+  const handleWhatsAppClick = () => {
+    const message = "Olá! Gostaria de agendar uma demonstração gratuita do GalaxIA™ para minha empresa.";
+    const whatsappUrl = `https://wa.me/5511999572394?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-hero overflow-hidden">
+      {/* Skip link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50"
+      >
+        Pular para o conteúdo principal
+      </a>
+
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-galaxia-light via-background to-galaxia-light opacity-50"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-galaxia-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-galaxia-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+        {/* Badge */}
+        <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-semibold bg-primary/10 text-primary border-primary/20">
+          <Sparkles className="w-4 h-4 mr-2" />
+          Nova Era da IA Corporativa
+        </Badge>
+
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-inter mb-6 leading-tight">
+          <span className="bg-gradient-primary bg-clip-text text-transparent">
+            Infraestrutura de IA
+          </span>
+          <br />
+          <span className="text-foreground">personalizada para sua empresa</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed font-inter">
+          Transforme seu negócio com o <strong className="text-primary font-bold">GalaxIA™</strong>, 
+          a solução que integra agentes conversacionais, automações e copilotos internos sob medida 
+          para empresas com faturamento <strong>acima de R$ 1 milhão</strong>.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <Button 
+            size="lg"
+            onClick={scrollToContact}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 text-lg shadow-button transition-all duration-300 hover:shadow-galaxia font-inter"
+          >
+            Agende uma demonstração gratuita
+          </Button>
+          
+          <Button 
+            size="lg"
+            variant="outline"
+            onClick={handleWhatsAppClick}
+            className="bg-galaxia-green hover:bg-galaxia-green/90 text-white border-galaxia-green font-bold px-8 py-4 text-lg transition-all duration-300 font-inter"
+          >
+            Fale agora no WhatsApp
+          </Button>
+        </div>
+
+        {/* Visual Element */}
+        <div className="relative mx-auto max-w-4xl">
+          <div className="bg-gradient-galaxia p-1 rounded-2xl shadow-galaxia">
+            <div className="bg-background rounded-xl p-8 md:p-12">
+              <div className="flex items-center justify-center space-x-8 opacity-60">
+                {/* Simulated network visualization */}
+                <div className="w-4 h-4 bg-galaxia-blue rounded-full animate-pulse"></div>
+                <div className="w-2 h-px bg-galaxia-blue"></div>
+                <div className="w-6 h-6 bg-galaxia-purple rounded-full animate-pulse delay-300"></div>
+                <div className="w-2 h-px bg-galaxia-purple"></div>
+                <div className="w-4 h-4 bg-galaxia-cyan rounded-full animate-pulse delay-500"></div>
+                <div className="w-2 h-px bg-galaxia-cyan"></div>
+                <div className="w-5 h-5 bg-galaxia-blue rounded-full animate-pulse delay-700"></div>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4 font-inter">
+                Rede neural conectando sua empresa ao futuro
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GalaxiaHeroSection;
