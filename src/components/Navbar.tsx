@@ -8,11 +8,13 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 64; // Height of the fixed navbar
-      const elementPosition = element.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
+      requestAnimationFrame(() => {
+        const navbarHeight = 64; // Height of the fixed navbar
+        const elementPosition = element.offsetTop - navbarHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
       });
     }
     setIsMenuOpen(false);

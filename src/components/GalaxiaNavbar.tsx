@@ -8,12 +8,14 @@ const GalaxiaNavbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 64; // Height of fixed navbar
-      const targetPosition = element.offsetTop - navHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+      requestAnimationFrame(() => {
+        const navHeight = 64; // Height of fixed navbar
+        const targetPosition = element.offsetTop - navHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
       });
     }
     setIsMenuOpen(false);
