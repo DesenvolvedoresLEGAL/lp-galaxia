@@ -9,13 +9,7 @@ const GalaxiaNavbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       requestAnimationFrame(() => {
-        const navHeight = 64; // Height of fixed navbar
-        const targetPosition = element.offsetTop - navHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     }
     setIsMenuOpen(false);

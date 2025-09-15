@@ -74,6 +74,7 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --fixed-nav-h: 64px;
   }
 
   .dark {
@@ -127,6 +128,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Offset target for fixed navbar on anchor/scrollIntoView */
+  [id] {
+    scroll-margin-top: var(--fixed-nav-h);
   }
 
   /* Enhanced focus visibility for accessibility */

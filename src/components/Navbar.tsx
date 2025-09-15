@@ -9,12 +9,7 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       requestAnimationFrame(() => {
-        const navbarHeight = 64; // Height of the fixed navbar
-        const elementPosition = element.offsetTop - navbarHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     }
     setIsMenuOpen(false);
