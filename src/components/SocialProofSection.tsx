@@ -3,18 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const SocialProofSection = () => {
   const stats = [
-    { number: "+25", label: "Projetos de IA entregues", icon: "🚀" },
-    { number: "+R$ 10M", label: "Em resultados gerados", icon: "💰" },
-    { number: "1h", label: "Resposta Garantida", icon: "⚡" },
-    { number: "4x", label: "Ganho médio de eficiência", icon: "📈" }
+    { number: "+50", label: "Projetos de IA entregues", icon: "🚀" },
+    { number: "+R$ 15M", label: "Em resultados gerados", icon: "💰" },
+    { number: "24h", label: "Resposta Garantida", icon: "⚡" },
+    { number: "5x", label: "Ganho médio de eficiência", icon: "📈" }
   ];
 
   const badges = [
     "Garantia de Resultado",
-    "Atendimento em 24h", 
-    "Sem Burocracia",
+    "ROI em até 6 meses", 
+    "Setup em 30 dias",
     "100% B2B",
-    "Especialistas em IA"
+    "Especialistas em IA",
+    "Suporte Dedicado"
   ];
 
   return (

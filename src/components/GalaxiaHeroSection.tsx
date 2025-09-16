@@ -48,11 +48,24 @@ const GalaxiaHeroSection = () => {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed font-inter">
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed font-inter">
           Transforme seu negócio com o <strong className="text-primary font-bold">GalaxIA™</strong>, 
           a solução que integra agentes conversacionais, automações e copilotos internos sob medida 
           para empresas com faturamento <strong>acima de R$ 1 milhão</strong>.
         </p>
+        
+        {/* Benefits Highlight */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12 max-w-3xl mx-auto">
+          <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-2 text-sm font-semibold text-primary">
+            ⚡ Economize até 30% do tempo operacional
+          </div>
+          <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-2 text-sm font-semibold text-primary">
+            📈 ROI em até 6 meses
+          </div>
+          <div className="bg-primary/10 border border-primary/20 rounded-full px-4 py-2 text-sm font-semibold text-primary">
+            🚀 Setup em 30 dias
+          </div>
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col items-center gap-6 mb-16">
