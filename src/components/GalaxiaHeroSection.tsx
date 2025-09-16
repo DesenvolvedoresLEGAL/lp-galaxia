@@ -92,8 +92,8 @@ const GalaxiaHeroSection = () => {
           </div>
           
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm">
-            <span className="font-semibold text-sm text-primary mr-2">
+          <div className="inline-flex items-center px-4 py-2 rounded-full animate-pulse hover-scale shadow-lg shadow-primary/25 bg-gradient-to-r from-primary/10 to-primary/20 border border-primary/30 backdrop-blur-sm">
+            <span className="font-semibold text-sm text-primary animate-bounce mr-2">
               🔥
             </span>
             <span className="font-semibold text-sm text-primary">
@@ -104,12 +104,6 @@ const GalaxiaHeroSection = () => {
 
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2"></div>
-        </div>
-      </div>
     </section>
   );
 };
