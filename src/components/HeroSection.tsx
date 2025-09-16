@@ -87,8 +87,8 @@ toast({
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center" id="main-content">
           <div className="max-w-4xl mx-auto">
-            <Badge variant="outline" className="mb-4 text-primary border-primary/20 animate-pulse">
-              <span aria-hidden="true">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
+            <Badge variant="outline" className="mb-4 text-primary border-primary/20 animate-pulse hover-scale shadow-lg shadow-primary/25 bg-gradient-to-r from-primary/5 to-primary/10">
+              <span aria-hidden="true" className="animate-bounce mr-2">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
             </Badge>
             
             <h1 

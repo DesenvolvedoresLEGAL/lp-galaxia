@@ -181,8 +181,8 @@ const ContactSection = () => {
               Em até 24h nosso time responde com uma proposta inicial personalizada. <span className="text-primary font-semibold">Sem blá-blá-blá.</span>
             </p>
             <div className="flex justify-center">
-              <Badge variant="outline" className="text-primary border-primary/20 animate-pulse">
-                <span aria-hidden="true">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
+              <Badge variant="outline" className="text-primary border-primary/20 animate-pulse hover-scale shadow-lg shadow-primary/25 bg-gradient-to-r from-primary/5 to-primary/10">
+                <span aria-hidden="true" className="animate-bounce">🔥</span> Últimas 3 vagas de Setembro - Empresas Pequenas, Médias e Grandes
               </Badge>
             </div>
           </div>
