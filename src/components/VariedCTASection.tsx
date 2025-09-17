@@ -27,16 +27,6 @@ const VariedCTASection = () => {
 
   const ctaOptions = [
     {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Demonstração Personalizada",
-      description: "Veja o GalaxIA™ funcionando com dados do seu setor",
-      action: "Agendar Demo",
-      onClick: handleScheduleDemo,
-      badge: "Recomendado",
-      variant: "default" as const,
-      audience: "Para empresas prontas para implementar"
-    },
-    {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "Fale com Especialista",
       description: "Tire dúvidas direto com nosso time técnico",
@@ -70,7 +60,7 @@ const VariedCTASection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
           {ctaOptions.map((option, index) => (
             <Card key={index} className="relative h-full border-border/50 hover:shadow-card transition-all group">
               {option.badge && (
@@ -107,8 +97,7 @@ const VariedCTASection = () => {
             Garantia de Resultado
           </h3>
           <p className="text-muted-foreground">
-            Se não identificarmos ao menos 3 oportunidades concretas de aplicação de IA 
-            na sua empresa, devolvemos 100% do investimento na consultoria.
+            Se não conseguirmos cumprir com a tabela de ROI personalizada para sua empresa, devolvemos 100% do valor investido no SETUP!
           </p>
         </div>
       </div>

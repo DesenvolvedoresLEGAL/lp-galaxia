@@ -38,29 +38,12 @@ const FinalCTASection = () => {
         </h2>
         
         <p className="text-xl md:text-2xl mb-16 max-w-4xl mx-auto font-inter opacity-90">
-          Agende uma demo, fale no WhatsApp ou solicite seu diagnóstico gratuito. 
+          Fale no WhatsApp ou solicite seu diagnóstico gratuito. 
           O primeiro passo para revolucionar sua empresa com IA está a um clique de distância.
         </p>
 
         {/* CTA Buttons */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-          {/* Schedule Demo */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-            <div className="bg-primary p-4 rounded-full w-fit mx-auto mb-6 group-hover:shadow-glow transition-all duration-300">
-              <Calendar className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold font-inter mb-4">Agendar Demo</h3>
-            <p className="text-sm opacity-80 font-inter mb-6">
-              Veja o GalaxIA™ funcionando na prática com casos similares ao seu
-            </p>
-            <Button 
-              onClick={handleScheduleDemo}
-              className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 font-inter"
-            >
-              Agendar uma Demo
-            </Button>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
           {/* WhatsApp */}
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
             <div className="bg-galaxia-green p-4 rounded-full w-fit mx-auto mb-6 group-hover:shadow-glow transition-all duration-300">

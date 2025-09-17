@@ -31,10 +31,9 @@ const SuccessCasesSection = () => {
   ];
 
   const handleContactClick = () => {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const message = "Quero melhorar minha operação com a IA da LEGAL";
+    const whatsappUrl = `https://wa.me/5511999572394?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

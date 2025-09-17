@@ -72,10 +72,10 @@ const GalaxiaHeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg"
-              onClick={scrollToContact}
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScqgHd7hLjqZ7WiqJmpiuW5CLJmbpdO8vuffahp8Bd5_PV_yA/viewform?usp=sharing&ouid=100646885101843381079', '_blank', 'noopener,noreferrer')}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 text-lg shadow-button transition-all duration-300 hover:shadow-galaxia font-inter"
             >
-              Agende uma demonstração gratuita
+              Realizar diagnóstico grátis
             </Button>
             
             <Button 

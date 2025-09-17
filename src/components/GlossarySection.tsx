@@ -27,6 +27,11 @@ const GlossarySection = () => {
       icon: BookOpen,
       term: "Setup de IA",
       definition: "Fase inicial de implementação e customização do GalaxIA™, incluindo análise, planejamento e configuração da infraestrutura personalizada."
+    },
+    {
+      icon: Brain,
+      term: "Aprendizado de Máquina",
+      definition: "Tecnologia que permite que sistemas aprendam e melhorem automaticamente através da experiência, sem serem explicitamente programados para cada tarefa."
     }
   ];
 
