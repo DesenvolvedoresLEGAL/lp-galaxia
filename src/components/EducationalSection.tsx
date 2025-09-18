@@ -98,32 +98,41 @@ const EducationalSection = () => {
           <h3 className="text-xl font-bold text-foreground mb-6 text-center">
             Aplicações por setor
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <h4 className="font-semibold text-primary mb-3">🎪 Empresas de Eventos</h4>
+              <h4 className="font-semibold text-primary mb-3">🛍️ Varejo</h4>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Gestão automática de inscrições</li>
-                <li>• Chatbot para dúvidas frequentes</li>
-                <li>• Análise de feedback em tempo real</li>
-                <li>• Automação de follow-up pós-evento</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-primary mb-3">🏭 Indústrias</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Predição de manutenção de equipamentos</li>
-                <li>• Otimização da cadeia de suprimentos</li>
-                <li>• Controle de qualidade automatizado</li>
+                <li>• Recomendação personalizada de produtos</li>
+                <li>• Prever demanda com base em histórico, sazonalidade e tendências externas</li>
+                <li>• Análise de comportamento de compra</li>
                 <li>• Gestão inteligente de estoque</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-primary mb-3">💻 Tech/Outros</h4>
+              <h4 className="font-semibold text-primary mb-3">⚖️ Jurídico</h4>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Automação de onboarding</li>
-                <li>• Análise de performance de produto</li>
-                <li>• Suporte técnico automatizado</li>
-                <li>• Gestão de conhecimento interno</li>
+                <li>• Análise automática de contratos</li>
+                <li>• Pesquisa jurisprudencial inteligente</li>
+                <li>• Classificação automática de processos</li>
+                <li>• Criação de petições automatizadas</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-primary mb-3">🏥 Saúde</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Automação de autorizações</li>
+                <li>• Integração com planos de saúde e checagem de faturas</li>
+                <li>• Atualização automática de agenda, envio de resultados e follow-ups</li>
+                <li>• Leitura de exames de imagem, detecção precoce de padrões de doenças</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-primary mb-3">🏢 Outros</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Manutenção preditiva e otimização de produção</li>
+                <li>• Automação de processos de chão de fábrica e relatórios de qualidade</li>
+                <li>• Prevenção de fraudes, scoring de crédito e predição de inadimplência</li>
+                <li>• Suporte técnico interno (manuais, normas de segurança e compliance)</li>
               </ul>
             </div>
           </div>
