@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Bot, Brain, Zap } from "lucide-react";
+import { Bot, Brain, Zap, ShoppingBag, Scale, Heart, Building2 } from "lucide-react";
 
 const EducationalSection = () => {
   const components = [
@@ -93,48 +93,140 @@ const EducationalSection = () => {
           ))}
         </div>
 
-        {/* Industry Examples */}
-        <div className="bg-background rounded-2xl p-8 border border-border/50">
-          <h3 className="text-xl font-bold text-foreground mb-6 text-center">
-            Aplicações por setor
-          </h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div>
-              <h4 className="font-semibold text-primary mb-3">🛍️ Varejo</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Recomendação personalizada de produtos</li>
-                <li>• Prever demanda com base em histórico, sazonalidade e tendências externas</li>
-                <li>• Análise de comportamento de compra</li>
-                <li>• Gestão inteligente de estoque</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-primary mb-3">⚖️ Jurídico</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Análise automática de contratos</li>
-                <li>• Pesquisa jurisprudencial inteligente</li>
-                <li>• Classificação automática de processos</li>
-                <li>• Criação de petições automatizadas</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-primary mb-3">🏥 Saúde</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Automação de autorizações</li>
-                <li>• Integração com planos de saúde e checagem de faturas</li>
-                <li>• Atualização automática de agenda, envio de resultados e follow-ups</li>
-                <li>• Leitura de exames de imagem, detecção precoce de padrões de doenças</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-primary mb-3">🏢 Outros</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Manutenção preditiva e otimização de produção</li>
-                <li>• Automação de processos de chão de fábrica e relatórios de qualidade</li>
-                <li>• Prevenção de fraudes, scoring de crédito e predição de inadimplência</li>
-                <li>• Suporte técnico interno (manuais, normas de segurança e compliance)</li>
-              </ul>
-            </div>
+        {/* Industry Applications - Modern Design */}
+        <div className="space-y-6">
+          <div className="text-center">
+            <Badge variant="outline" className="mb-4 text-primary border-primary/20">
+              Setores Atendidos
+            </Badge>
+            <h3 className="text-2xl font-bold text-foreground mb-3">
+              Aplicações por setor
+            </h3>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Soluções específicas desenvolvidas para atender as necessidades únicas de cada indústria
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Varejo */}
+            <Card className="group relative overflow-hidden border-border/50 hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-background to-background/80">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <ShoppingBag className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground text-lg">Varejo</h4>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Recomendação personalizada de produtos</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Predição de demanda inteligente</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Análise de comportamento de compra</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Gestão inteligente de estoque</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Jurídico */}
+            <Card className="group relative overflow-hidden border-border/50 hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-background to-background/80">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Scale className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground text-lg">Jurídico</h4>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Análise automática de contratos</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Pesquisa jurisprudencial inteligente</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Classificação automática de processos</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Criação de petições automatizadas</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Saúde */}
+            <Card className="group relative overflow-hidden border-border/50 hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-background to-background/80">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Heart className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground text-lg">Saúde</h4>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Automação de autorizações</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Integração com planos de saúde</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Gestão automática de agenda</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Análise de exames médicos</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Outros */}
+            <Card className="group relative overflow-hidden border-border/50 hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-background to-background/80">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Building2 className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground text-lg">Outros</h4>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Manutenção preditiva industrial</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Automação de processos fabris</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Prevenção de fraudes financeiras</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Suporte técnico interno</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
